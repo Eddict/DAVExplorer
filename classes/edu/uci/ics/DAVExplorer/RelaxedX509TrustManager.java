@@ -35,7 +35,10 @@ import java.security.cert.X509Certificate;
 
 
 /**
- * 
+ * Trust manager that accepts all certificates without validation.
+ * This is intentionally permissive and is only installed when the user
+ * explicitly consents to trust the remote host via the SSLTrustDialog prompt.
+ * It must NOT be used as the default trust manager.
  */
 public class RelaxedX509TrustManager implements X509TrustManager
 {
