@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+}
+
+group = 'edu.uci.ics'
+version = '1.00'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+// The HTTPClient sources use ISO-8859-1 (Latin-1) encoding.
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'ISO-8859-1'
+}
+
+// All sources live under classes/ using the original directory layout.
+// Gradle's default src/main/java is replaced here so no file moves are needed.
+sourceSets {
+    main {
+        java {
+            srcDirs = ['classes']
+            // The alt/ directory contains pre-Java-5 alternative implementations
+            // that were never part of the main build (not compiled by the Makefile).
+            exclude 'HTTPClient/alt/**'
+        }
+        resources {
+            srcDirs = ['classes']
+            // Only the icons directory needs to be bundled as a resource.
+            include 'edu/uci/ics/DAVExplorer/icons/**'
+        }
+    }
+}
+
+jar {
+    archiveFileName = 'DAVExplorer.jar'
+    // Place the jar at the project root, matching the legacy make output location.
+    destinationDirectory = layout.projectDirectory
+    manifest {
+        attributes(
+            'Main-Class'              : 'edu.uci.ics.DAVExplorer.Main',
+            'Specification-Title'     : 'UCI DAV Explorer',
+            'Specification-Version'   : version,
+            'Implementation-Title'    : 'DAVExplorer',
+            'Implementation-Version'  : version
+        )
+    }
+}

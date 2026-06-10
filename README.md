@@ -12,13 +12,35 @@ Version: **1.00**
 
 ## Prerequisites
 
-- **JDK 11 or later** (JDK 17 LTS recommended). JDK 8 also works.
-- `make` (Linux/macOS) — available via your system package manager.
-- On Windows: no `make` required; use the provided batch scripts instead.
+- **JDK 11 or later** (JDK 17 LTS recommended). JDK 21 also works.
+- No other build tool is required: the Gradle wrapper (`./gradlew`) is included and downloads Gradle automatically on first use.
+- `make` (Linux/macOS) — available via your system package manager (legacy build path; still works).
+- On Windows: `gradlew.bat` for Gradle, or the provided batch scripts for the legacy path.
 
 ---
 
-## Building on Linux / macOS
+## Building with Gradle (recommended)
+
+```bash
+# Clone the repository
+git clone https://github.com/Eddict/DAVExplorer.git
+cd DAVExplorer
+
+# Compile all sources and produce DAVExplorer.jar at the repo root
+./gradlew jar
+```
+
+On Windows:
+
+```bat
+gradlew.bat jar
+```
+
+The resulting `DAVExplorer.jar` is placed at the repository root.
+
+---
+
+## Building on Linux / macOS (legacy make path)
 
 ```bash
 # Clone the repository
@@ -34,10 +56,15 @@ to the repository root.
 
 ---
 
-## Building on Windows
+## Building on Windows (legacy make path)
 
-The top-level `Makefile` **does not work on Windows**. Use the provided batch
-scripts instead:
+On Windows, use the Gradle wrapper as the primary build path:
+
+```bat
+gradlew.bat jar
+```
+
+Legacy batch scripts are still available as an alternative:
 
 ```bat
 rem Compile all sources and produce DAVExplorer.jar
@@ -118,14 +145,19 @@ SSL support can also be enabled at runtime from the **Edit** menu.
 
 ```
 DAVExplorer/
+├── build.gradle       Gradle build script (primary build path)
+├── settings.gradle    Gradle settings (project name)
+├── gradlew            Gradle wrapper script (Linux/macOS)
+├── gradlew.bat        Gradle wrapper script (Windows)
+├── gradle/wrapper/    Gradle wrapper JAR and properties
 ├── classes/           Java source tree and sub-Makefiles
 │   ├── HTTPClient/    HTTPClient library sources
 │   ├── com/ms/xml/    MS XML parser sources
 │   └── edu/uci/ics/DAVExplorer/  Main application sources
-├── Makefile           Top-level build file (Linux/macOS)
-├── make.bat           Top-level build script (Windows)
-├── DAVjar.bat         Jar-only build script (Windows)
-├── DAVjar.sh          Jar-only build script (Linux/macOS)
+├── Makefile           Legacy build file (Linux/macOS)
+├── make.bat           Legacy build script (Windows)
+├── DAVjar.bat         Jar-only build script (Windows, legacy)
+├── DAVjar.sh          Jar-only build script (Linux/macOS, legacy)
 ├── DAVExplorer.sh     Launch script (Linux/macOS)
 ├── DAVExplorerSSL.sh  SSL launch script (Linux/macOS)
 ├── DAVExplorer.bat    Launch script (Windows)
