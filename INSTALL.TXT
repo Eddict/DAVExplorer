@@ -1,5 +1,9 @@
 Installation procedure
 
+See README.md in the repository root for up-to-date build and run instructions.
+The steps below are the original installation instructions preserved for historical
+reference. The recommended JDK is now 11 or later (JDK 17 LTS recommended).
+
 The preferred Java version to run DAV Explorer is Java 2 (JDK 1.2 and above.)
 DAV Explorer also runs with JDK 1.1.8 and Swing 1.1.1. However, this may
 restrict the capabilities of DAV Explorer.

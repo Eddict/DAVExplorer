@@ -30,7 +30,7 @@
 
 package edu.uci.ics.DAVExplorer;
 
-import com.sun.net.ssl.X509TrustManager;
+import javax.net.ssl.X509TrustManager;
 import java.security.cert.X509Certificate;
 
 
@@ -59,33 +59,10 @@ public class RelaxedX509TrustManager implements X509TrustManager
 
     /**
      *
-     * @param parm1
-     *  
-     * @return
-     */
-    public boolean isClientTrusted( X509Certificate[] parm1 )
-    {
-        return true;
-    }
-
-
-    /**
-     *
-     * @param parm1
-     *  
-     * @return
-     */
-    public boolean isServerTrusted( X509Certificate[] parm1 )
-    {
-        return true;
-    }
-
-
-    /**
-     *
      * @param chain
+     * @param authType
      */
-    public void checkClientTrusted( X509Certificate[] chain )
+    public void checkClientTrusted( X509Certificate[] chain, String authType )
     {
     }
 
@@ -93,8 +70,9 @@ public class RelaxedX509TrustManager implements X509TrustManager
     /**
      *
      * @param chain
+     * @param authType
      */
-    public void checkServerTrusted( X509Certificate[] chain )
+    public void checkServerTrusted( X509Certificate[] chain, String authType )
     {
     }
 }

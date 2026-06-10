@@ -4,7 +4,7 @@
 JC	 = javac
 JDOC	 = javadoc
 #JFLAGS   = -O -g -deprecation
-JFLAGS   = -O
+JFLAGS   = -O -encoding ISO-8859-1
 #CLASSP   = -classpath "$(JAVA_HOME)/lib/classes.zip:.."
 #JDCLASSP = -classpath "$(JAVA_HOME)/lib/classes.zip:.."
 
