@@ -159,6 +159,14 @@ Thanks to everybody.
 
 6. CHANGELOG
 
+Changes for version 1.00:
+- Added Gradle build support with the Gradle wrapper for both Unix-like
+  systems and Windows.
+- Kept the legacy make-based build path available, but documented Gradle as
+  the primary build path.
+- Refreshed the top-level project documentation to match the current build and
+  release workflow.
+
 Changes for version 0.92-dev:
 - Added namespace preservation for ACL privileges (thanks to Heiko Weber for
   pointing out the problem.)

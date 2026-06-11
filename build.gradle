@@ -13,6 +13,7 @@ java {
 // The HTTPClient sources use ISO-8859-1 (Latin-1) encoding.
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'ISO-8859-1'
+    options.compilerArgs += ['-Xlint:deprecation', '-Xlint:unchecked']
 }
 
 // All sources live under classes/ using the original directory layout.
