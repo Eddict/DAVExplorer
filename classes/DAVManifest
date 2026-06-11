@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Specification-Title: "UCI DAV Explorer"
-Specification-Version: "0.91"
+Specification-Version: "1.00"
 Specification-Vendor: "University of California, Irvine; School of Information and Computer Science"
 Implementation-Title: "DAVExplorer"
-Implementation-Version: "0.91"
+Implementation-Version: "1.00"
 Implementation-Vendor: "University of California, Irvine; School of Information and Computer Science"
 Sealed: false
 Main-Class: edu/uci/ics/DAVExplorer.Main

@@ -64,7 +64,7 @@ public class URIContainer
         };
         try
         {
-            System.runFinalizersOnExit(true);
+            /* System.runFinalizersOnExit removed in JDK 11 */
         }
         catch( Throwable t )
         {

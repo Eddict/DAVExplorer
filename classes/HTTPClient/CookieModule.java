@@ -134,7 +134,7 @@ public class CookieModule implements HTTPClientModule
 		    public void finalize() { saveCookies(); }
 		};
 	    try
-		{ System.runFinalizersOnExit(true); }
+		{ /* System.runFinalizersOnExit removed in JDK 11 */ }
 	    catch (Throwable t)
 		{ }
 	}
