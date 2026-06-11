@@ -29,8 +29,8 @@ jobs:
           java-version: ${{ matrix.java }}
           distribution: temurin
 
-      - name: Build with make
-        run: make
+      - name: Build with Gradle
+        run: ./gradlew jar
 
       - name: Verify jar was produced
         run: test -f DAVExplorer.jar
