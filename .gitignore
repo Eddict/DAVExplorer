@@ -1,0 +1,5 @@
+# Compiled Java class files
+**/*.class
+
+# Built jar artifact (produced by make at repo root)
+/DAVExplorer.jar

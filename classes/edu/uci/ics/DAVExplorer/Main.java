@@ -121,7 +121,7 @@ import java.io.*;
  */
 public class Main extends JFrame
 {
-    public final static String VERSION = "0.92-dev";
+    public final static String VERSION = "1.00";
     public final static String UserAgent = "UCI DAV Explorer/" + VERSION;
     public final static String COPYRIGHT = "Copyright (c) 1998-2005 Regents of the University of California\nCopyright (c) 2006-2012 J. Joe Feise";
     public final static String EMAIL = "EMail: dav@davexplorer.org";
