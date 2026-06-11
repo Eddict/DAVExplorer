@@ -70,7 +70,7 @@ import HTTPClient.ModuleException;
 import java.util.Vector;
 import java.util.StringTokenizer;
 import java.awt.Cursor;
-//import com.sun.net.ssl.KeyManager;
+//import javax.net.ssl.KeyManager;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
@@ -275,7 +275,7 @@ public class WebDAVManager
                     if( dlg.getTrust( Hostname ) )
                     {
                         TrustManager[] tm = { new RelaxedX509TrustManager() };
-                        SSLContext sslContext = SSLContext.getInstance("SSL");
+                        SSLContext sslContext = SSLContext.getInstance("TLS");
                         sslContext.init( null, tm, new java.security.SecureRandom() );
                         SSLSocketFactory sf = sslContext.getSocketFactory();
                         Con.setSSLSocketFactory( sf );

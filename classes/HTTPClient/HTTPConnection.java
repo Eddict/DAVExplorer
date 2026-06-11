@@ -3008,6 +3008,10 @@ public class HTTPConnection implements GlobalConstants, HTTPClientModuleConstant
                         Certificate[] certs = con.getServerCertificates();
                         checkCert(certs[0], Host, allowAnyHostname);
                         sock = ((SSLSocketFactory)sslFactory).createSocket(sock, Host, Port, true);
+                        if (sock instanceof SSLSocket) {
+                            SSLSocket sslSock = (SSLSocket) sock;
+                            sslSock.setEnabledProtocols(new String[]{"TLSv1.2", "TLSv1.3"});
+                        }
                     }
                     catch( NoClassDefFoundError err )
                     {
