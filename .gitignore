@@ -1,5 +1,9 @@
 # Compiled Java class files
 **/*.class
 
-# Built jar artifact (produced by make at repo root)
+# Built jar artifact (produced by make or Gradle at repo root)
 /DAVExplorer.jar
+
+# Gradle build output
+/build/
+.gradle/
